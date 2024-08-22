@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denah Rumah </title>
+</head>
+<body>
+    <h1 style="text-align: center;">Ganti Nama <br> 5SIA1 </h1>
+    <canvas id="kanvas" width="1500" height="1200" style="background-color: white;"></canvas>
+
+    <script>
+        const k = document.getElementById('kanvas');
+        const c = k.getContext('2d');
+        const PI = Math.PI;
+
+        // Fungsi untuk menggambar dinding
+        function drawWall(x, y, width, height) {
+            c.beginPath();
+            c.rect(x, y, width, height);
+            c.strokeStyle = "black";
+            c.fillStyle="red";
+            c.lineWidth = 6;
+            c.stroke();
+            c.fill();
+        }
+
+        // Fungsi untuk menggambar pintu
+        function drawDoor(x, y, width, height) {
+            c.beginPath();
+            c.rect(x, y, width, height);
+            c.fillStyle = "black";
+            c.fill();
+            c.lineWidth = 2;
+        }
+
+        // Fungsi untuk menggambar jendela
+        function ac(x, y, width, height) {
+            c.beginPath();
+            c.rect(x, y, width, height);
+            c.fillStyle = "lightblue";
+            c.lineWidth= 2;
+            c.fill();
+            c.stroke();
+        }
+        function trans(x, y, width, height) {
+            c.beginPath();
+            c.rect(x, y, width, height);
+            c.lineWidth = 3;
+            c.fillStyle="transparant";
+            c.fill();
+        }
+
+        function dash1(x, y, width, height){
+            c.beginPath();
+            c.setLineDash([10, 4, 3, 4]);
+            c.arc(310, 450,60,1.45*PI,2*PI);
+            c.stroke();
+        }
+
+        function dash2(x, y, width, height){
+            c.beginPath();
+            c.setLineDash([10, 4, 3, 4]);
+            c.arc(430, 450,60,1*PI,0.5*PI,true);
+            c.stroke();
+        }
+
+        function dash3(x, y, width, height){
+            c.beginPath();
+            c.setLineDash([10, 4, 3, 4]);
+            c.arc(199, 163,55,1.5*PI,0.98*PI,true);
+            c.stroke();
+        }
+
+        function dash4(x, y, width, height){
+            c.beginPath();
+            c.setLineDash([10, 4, 3, 4]);
+            c.arc(199, 289,55,0.5*PI,1*PI);
+            c.stroke();
+        }
+
+        function table(x, y, width, height) {
+            c.beginPath();
+            c.rect(x, y, width, height);
+            c.fillStyle = "#5B99C2";
+            c.stroke();
+            c.lineWidth = 3;
+            c.fill();
+        }
+
+        function chair1(x, y, width, height) {
+            c.beginPath();
+            c.arc(275, 130,15,0*PI,2*PI);
+            c.fillStyle="white"
+            c.stroke();
+            c.fill()
+        }
+
+        function chair2(x, y, width, height) {
+            c.beginPath();
+            c.rect(x, y, width, height);
+            c.fillStyle = "white";
+            c.lineWidth = 3;
+            c.stroke();
+            c.fill();
+        }
+
+        function chair3(x, y, width, height) {
+            c.beginPath();
+            c.arc(445, 130,15,0*PI,2*PI);
+            c.fillStyle="white"
+            c.stroke();
+            c.fill()
+        }
+
+        function tv(x, y, width, height) {
+            c.beginPath();
+            c.rect(x, y, width, height);
+            c.fillStyle = "black";
+            c.lineWidth = 3;
+            c.fill();
+        }
+        
+        function table2(x, y, width, height) {
+            c.beginPath();
+            c.rect(x, y, width, height);
+            c.fillStyle = "black";
+            c.lineWidth = 3;
+            c.fill();
+        }
+
+        function grab(x, y, width, height) {
+            c.beginPath();
+            c.rect(x, y, width, height);
+            c.fillStyle = "brown";
+            c.lineWidth = 3;
+            c.fill();
+        }
+
+        function table3(x, y, width, height) {
+            c.beginPath();
+            c.rect(x, y, width, height);
+            c.fillStyle = "white";
+            c.lineWidth = 3;
+            c.fill();
+            c.stroke();
+        }
+
+        function bed(x, y, width, height) {
+            c.beginPath();
+            c.rect(x, y, width, height);
+            c.fillStyle = "grey";
+            c.stroke();
+            c.lineWidth = 3;
+            c.fill();
+        }
+
+        function pillow(x, y, width, height) {
+            c.beginPath();
+            c.rect(x, y, width, height);
+            c.fillStyle = "black";
+            c.stroke();
+            c.lineWidth = 3;
+            c.fill();
+        }
+
+        function minitbale(x, y, width, height) {
+            c.beginPath();
+            c.rect(x, y, width, height);
+            c.fillStyle = "white";
+            c.stroke();
+            c.lineWidth = 3;
+            c.fill();
+        }
+
+        function lamp(x, y, width, height) {
+            c.beginPath();
+            c.arc(155, 57,2,0*PI,2*PI);
+            c.fillStyle="yellow"
+            c.stroke();
+            c.fill()
+        }
+
+        function lamp2(x, y, width, height) {
+            c.beginPath();
+            c.arc(155, 400,2,0*PI,2*PI);
+            c.fillStyle="yellow"
+            c.stroke();
+            c.fill()
+        }
+
+        function table4(x, y, width, height) {
+            c.beginPath();
+            c.rect(x, y, width, height);
+            c.fillStyle = "grey";
+            c.stroke();
+            c.lineWidth = 3;
+            c.fill();
+        }
+
+        function stair(x, y, width, height) {
+            c.beginPath();
+            c.rect(x, y, width, height);
+            c.strokeStyle = "black";
+            c.fillStyle="white";
+            c.lineWidth = 6;
+            c.stroke();
+            c.fill();
+        }
+        
+        function dash5(x, y, width, height){
+            c.beginPath();
+            c.setLineDash([10, 4, 3, 4]);
+            c.arc(891, 232,50,0.45*PI,1*PI);
+            c.stroke();
+        }
+
+        function dash6(x, y, width, height){
+            c.beginPath();
+            c.setLineDash([10, 4, 3, 4]);
+            c.arc(891,349,50,1*PI,1.55*PI);
+            c.stroke();
+        }
+
+        function table_b(x, y, width, height) {
+            c.beginPath();
+            c.rect(x, y, width, height);
+            c.strokeStyle = "black";
+            c.fillStyle="green";
+            c.lineWidth = 8;
+            c.stroke();
+            c.fill();
+        }  
+        
+        function hole(x, y, width, height){
+            c.beginPath();
+            c.arc(991, 102,3,0*PI,2*PI);
+            c.fill();
+            
+        }
+
+        function hole2(x, y, width, height){
+            c.beginPath();
+            c.arc(1050, 102,3,0*PI,2*PI);
+            c.fill();
+            
+        }
+
+        function hole3(x, y, width, height){
+            c.beginPath();
+            c.arc(1109, 102,3,0*PI,2*PI);
+            c.fill();
+            
+        }
+
+        function hole4(x, y, width, height){
+            c.beginPath();
+            c.arc(991, 159,3,0*PI,2*PI);
+            c.fill();
+            
+        }
+
+        function hole5(x, y, width, height){
+            c.beginPath();
+            c.arc(1050, 159,3,0*PI,2*PI);
+            c.fill();
+            
+        }
+
+        function hole6(x, y, width, height){
+            c.beginPath();
+            c.arc(1109, 159,3,0*PI,2*PI);
+            c.fill();
+            
+        }
+
+        function table5(x, y, width, height) {
+            c.beginPath();
+            c.rect(x, y, width, height);
+            c.fillStyle = "grey";
+            c.lineWidth = 3;
+            c.fill();
+            c.stroke();
+        }
+
+        function kulkas(x, y, width, height) {
+            c.beginPath();
+            c.rect(x, y, width, height);
+            c.fillStyle = "white";
+            c.lineWidth = 3;
+            c.fill();
+            c.stroke();
+        }
+
+        // lantai 1
+        
+        
+        
+        drawWall(60, 50, 150, 116); // 
+
+        drawWall(60, 169, 150, 120); // 
+        
+        drawWall(60, 169, 78, 120); // 
+        
+        drawWall(60, 287, 150, 120); // 
+        
+        drawWall(210, 50, 300, 400); // Ruang tamu
+        
+        drawWall(510, 50, 150, 150); //
+        
+        drawWall(210, 50, 300, 165); // Ruang makan
+
+        // lantai 2
+
+        //  drawWall(750, 50, 150, 116); // 
+
+        // drawWall(750, 169, 150, 120); // 
+
+        // drawWall(750, 290, 150, 120); // 
+        
+        // drawWall(900, 50, 300, 400); // 
+        
+        // drawWall(510, 50, 150, 150); //
+        
+        // drawWall(900, 50, 300, 165); // 
+
+        
+       
+
+        trans(145, 157, 50, 135); //
+
+        trans(311,303, 107, 150); // 
+
+        trans(120, 225, 100, 50); 
+         
+        
+
+        // trans(1010, 157, 100, 135); //
+
+        // trans(850, 236, 70, 45); // L 2
+
+        // trans(850, 299, 100, 50); 
+        
+        trans(470,100, 50, 50); //
+
+        trans(285, 198, 150, 30); // 
+
+
+
+        // table(300, 100, 120, 60 ); // meja makan
+
+        
+
+
+
+        // chair1(); // kursi bulat
+
+        // chair2(320,60,30,30); // kursi kotak
+
+        // chair2(370,60,30,30); // kursi kotak
+
+        // chair2(370,170,30,30); // kursi kotak
+        
+        // chair2(320,170,30,30); // kursi kotak
+
+        // chair3(); // kursi bulat
+        
+
+        // table_b(990, 100, 120, 60);
+
+        table5(631,49,30,30);
+        table5(631,80,30,90);
+        table5(631,170,30,30);
+        
+        table3(641,49,20,30);
+        table3(641,80,20,90);
+        table3(641,170,20,30);
+        
+        // table5(555,49,15,40);
+        // kulkas(560,49,15,20);
+        // kulkas(560,70,15,20);
+        // kulkas(568,73,5,6);
+        // kulkas(568,63,5,6);
+
+
+
+        
+
+        // kamar 1
+        // ac(59, 70,8,20); //
+
+        // minitbale(150, 52,10,10); //
+
+        bed(95, 51,50,50); // tempat tidur L1
+        
+        pillow(110, 51,20,10); // 
+
+        table4(63, 300,15,30); //
+
+        chair2(83, 310,10,10); //
+
+        // lamp();
+
+        // kamar 2
+
+        // ac(59, 370,8,20); //
+
+        // minitbale(150, 395,10,10); //
+
+        bed(95, 357,50,50); // tempat tidur L1
+        
+        pillow(110, 396,20,10); //
+
+        table4(63, 132,15,30); //
+
+        chair2(83, 143,10,10); //
+
+        // lamp2(); //
+        
+        tv(498,290,10,100); // (anggap aja tv :v)
+
+        table2(400,290,40,90); // sofa
+
+        grab(400,290,50,20); //
+
+        grab(400,370,50,20); //
+        
+        grab(400,290,20,80); //
+
+        
+        
+        // // tangga lantai 1
+        // stair(440,219,20,40,165)
+        // stair(450,219,20,40,165)
+        // stair(460,219,20,40,165)
+        // stair(470,219,20,40,165)
+        // stair(480,219,20,40,165)
+        // stair(490,219,20,40,165)
+
+        // // tangga lantai 2
+        // stair(1179,260,20,40,165)
+        // stair(1170,260,20,40,165)
+        // stair(1160,260,20,40,165)
+        // stair(1150,260,20,40,165)
+        
+        // table3(450, 325, 30, 30); // meja 
+        
+
+        // garis putus"
+
+        dash1(); //arah pintu
+        dash2(); //arah pintu
+        dash3(); //arah pintu   
+        dash4(); //arah pintu 
+        // dash5();  
+        // dash6();  
+       
+        // hole();
+        // hole2();
+        // hole3();
+        // hole4();
+        // hole5();
+        // hole6();
+
+        // pintu
+        drawDoor(300, 390, 10, 60); // Pintu Ruang Tamu
+        drawDoor(420, 450, 10, 60); // Pintu Ruang Tamu
+        drawDoor(195, 106, 10, 60); // Pintu Kamar 1
+        drawDoor(195, 286, 10, 60); // Pintu Kamar 2
+        // drawDoor(840, 345, 60, 10); // Pintu Kamar 1 lantai 2
+        // drawDoor(840, 230, 60, 10); // Pintu Kamar 2 lantai 2
+
+        
+
+        
+
+
+
+
+    </script>
+</body>
+</html>
